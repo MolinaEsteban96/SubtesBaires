@@ -1,0 +1,111 @@
+.title-bg {
+
+    background-color: #e7de00;
+}
+
+.A-line { 
+
+    background-image: url("/imgs/lineaA.jpg");
+    background-position: 60%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(0, 0, 255, 0.3);
+}
+
+.A-line:hover { 
+
+    background-image: url("/imgs/lineaA.jpg");
+    background-position: 60%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(0, 0, 255, 0.5);
+    color: white;
+}
+
+.A-line-fullscreen {
+
+    background-image: url("/imgs/lineaA.jpg");
+    background-position: 60%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(0, 0, 255, 0.3);
+}
+
+.B-line { 
+
+    background-image: url("/imgs/lineaB.jpg");
+    background-position: 30%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(255, 0, 0, 0.2);
+}
+
+.B-line:hover { 
+
+    background-image: url("/imgs/lineaB.jpg");
+    background-position: 30%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(255, 0, 0, 0.5);
+    color: white;
+}
+
+.B-line-fullscreen {
+
+    background-image: url("/imgs/lineaB.jpg");
+    background-position: 60%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(255, 0, 0, 0.2);
+}
+
+.D-line { 
+
+    background-image: url("/imgs/lineaD.jpg");
+    background-position: 30%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(0, 255, 0, 0.2);
+}
+
+.D-line:hover { 
+
+    background-image: url("/imgs/lineaD.jpg");
+    background-position: 30%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(0, 255, 0, 0.5);
+    color: white;
+}
+
+.D-line-fullscreen {
+
+    background-image: url("/imgs/lineaD.jpg");
+    background-position: 60%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(0, 255, 0, 0.2);
+}
+
+.E-line { 
+
+    background-image: url("/imgs/lineaE.jpg");
+    background-position: 30%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(120, 40, 140, 0.5);
+}
+
+.E-line:hover { 
+
+    background-image: url("/imgs/lineaE.jpg");
+    background-position: 30%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(120, 40, 140, 0.8);
+    color: white;
+}
+
+.E-line-fullscreen {
+
+    background-image: url("/imgs/lineaE.jpg");
+    background-position: 60%;
+    height: 85vh;
+    box-shadow: inset 0 0 0 100vmax rgba(120, 40, 140, 0.5);
+}
+
+.line-title {
+
+    position: relative;
+    top: 45%;
+    left: 30%;
+}

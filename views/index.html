@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiTransporte</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <div class="container-fluid">
+            <div class="row title-bg">
+                <div class="col-md-12 text-center">
+                    <a href="" @click="control == 0" style="text-decoration: none; color: black;"><h1 style="font-size: 70px;">SubtesBaires</h1></a>
+                </div>
+            </div>
+            <div v-if="control == 0">
+                <div class="row">
+                    <div class="col-md-3 A-line" @click="control = 1">
+                        <h1 class="line-title">Linea A</h1>
+                    </div>
+                    <div class="col-md-3 B-line" @click="control = 2">
+                        <h1 class="line-title">Linea B</h1>
+                    </div>
+                    <div class="col-md-3 D-line" @click="control = 3">
+                        <h1 class="line-title">Linea D</h1>
+                    </div>
+                    <div class="col-md-3 E-line" @click="control = 4">
+                        <h1 class="line-title d-inline">Linea E</h1>
+                    </div>
+                </div>
+            </div>
+            <div v-if="control == 1">
+                <div class="row">
+                    <div class="col-md-12 A-line-fullscreen text-center text-white">
+                        <h3 class="mt-5 p-2 bg-dark">Próximos Servicios</h3>
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <h4 class="mt-5 bg-dark">{{linesJson[0].Linea.Estaciones[0].stop_name}}</h4>
+                                <h5 class="bg-dark">Sale a las: {{linesJson[0].Linea.Estaciones[0].departure.time}}</h5>
+                                <h4 class="mt-5 bg-dark">{{linesJson[1].Linea.Estaciones[linesJson[0].Linea.Estaciones.length -1].stop_name}}</h4>
+                                <h5 class="bg-dark">Llega a las: {{linesJson[1].Linea.Estaciones[linesJson[1].Linea.Estaciones.length -1].arrival.time}}</h5>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <h4 class="mt-5 bg-dark">{{linesJson[0].Linea.Estaciones[linesJson[2].Linea.Estaciones.length -1].stop_name}}</h4>
+                                <h5 class="bg-dark">Llega a las: {{linesJson[0].Linea.Estaciones[linesJson[2].Linea.Estaciones.length -1].arrival.time}}</h5>
+                                <h4 class="mt-5 bg-dark">{{linesJson[1].Linea.Estaciones[0].stop_name}}</h4>
+                                <h5 class="bg-dark">Sale a las: {{linesJson[1].Linea.Estaciones[0].departure.time}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="control == 2">
+                <div class="row">
+                    <div class="col-md-12 B-line-fullscreen text-center text-white">
+                        <h3 class="mt-5 p-2 bg-dark">Próximos Servicios</h3>
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <h4 class="mt-5 bg-dark">{{linesJson[2].Linea.Estaciones[0].stop_name}}</h4>
+                                <h5 class="bg-dark">Sale a las: {{linesJson[2].Linea.Estaciones[0].departure.time}}</h5>
+                                <h4 class="mt-5 bg-dark">{{linesJson[3].Linea.Estaciones[linesJson[3].Linea.Estaciones.length -1].stop_name}}</h4>
+                                <h5 class="bg-dark">Llega a las: {{linesJson[3].Linea.Estaciones[linesJson[0].Linea.Estaciones.length -1].departure.time}}</h5>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <h4 class="mt-5 bg-dark">{{linesJson[2].Linea.Estaciones[linesJson[2].Linea.Estaciones.length -1].stop_name}}</h4>
+                                <h5 class="bg-dark">Llega a las: {{linesJson[2].Linea.Estaciones[linesJson[2].Linea.Estaciones.length -1].arrival.time}}</h5>
+                                <h4 class="mt-5 bg-dark">{{linesJson[3].Linea.Estaciones[0].stop_name}}</h4>
+                                <h5 class="bg-dark">Sale a las: {{linesJson[3].Linea.Estaciones[0].arrival.time}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="control == 3">
+                <div class="row">
+                    <div class="col-md-12 D-line-fullscreen text-center text-white">
+                        <h3 class="mt-5 p-2 bg-dark">Próximos Servicios</h3>
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <h4 class="mt-5 bg-dark">{{linesJson[4].Linea.Estaciones[0].stop_name}}</h4>
+                                <h5 class="bg-dark">Sale a las: {{linesJson[4].Linea.Estaciones[0].departure.time}}</h5>
+                                <h4 class="mt-5 bg-dark">{{linesJson[5].Linea.Estaciones[linesJson[5].Linea.Estaciones.length -1].stop_name}}</h4>
+                                <h5 class="bg-dark">Llega a las: {{linesJson[5].Linea.Estaciones[linesJson[5].Linea.Estaciones.length -1].departure.time}}</h5>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <h4 class="mt-5 bg-dark">{{linesJson[4].Linea.Estaciones[linesJson[4].Linea.Estaciones.length -1].stop_name}}</h4>
+                                <h5 class="bg-dark">Llega a las: {{linesJson[4].Linea.Estaciones[linesJson[4].Linea.Estaciones.length -1].arrival.time}}</h5>
+                                <h4 class="mt-5 bg-dark">{{linesJson[5].Linea.Estaciones[0].stop_name}}</h4>
+                                <h5 class="bg-dark">Sale a las: {{linesJson[5].Linea.Estaciones[0].arrival.time}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="control == 4">
+                <div class="row">
+                    <div class="col-md-12 E-line-fullscreen text-center text-white">
+                        <h3 class="mt-5 p-2 bg-dark">Próximos Servicios</h3>
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <h4 class="mt-5 bg-dark">{{linesJson[6].Linea.Estaciones[0].stop_name}}</h4>
+                                <h5 class="bg-dark">Sale a las: {{linesJson[6].Linea.Estaciones[0].departure.time}}</h5>
+                                <h4 class="mt-5 bg-dark">{{linesJson[7].Linea.Estaciones[linesJson[7].Linea.Estaciones.length -1].stop_name}}</h4>
+                                <h5 class="bg-dark">Llega a las: {{linesJson[7].Linea.Estaciones[linesJson[7].Linea.Estaciones.length -1].departure.time}}</h5>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <h4 class="mt-5 bg-dark">{{linesJson[6].Linea.Estaciones[linesJson[6].Linea.Estaciones.length -1].stop_name}}</h4>
+                                <h5 class="bg-dark">Llega a las: {{linesJson[6].Linea.Estaciones[linesJson[6].Linea.Estaciones.length -1].arrival.time}}</h5>
+                                <h4 class="mt-5 bg-dark">{{linesJson[7].Linea.Estaciones[0].stop_name}}</h4>
+                                <h5 class="bg-dark">Sale a las: {{linesJson[7].Linea.Estaciones[0].arrival.time}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---A B D E-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="/js/control.js"></script>
+</body>
+</html>
