@@ -15,7 +15,7 @@ app.get("/api",(req,res) => {
 
     var jsonResponse = [];
 
-    fetch("https://apitransporte.buenosaires.gob.ar/subtes/forecastGTFS?client_id=xxxxxxxxxxxxxxxxxxxx&client_secret=xxxxxxxxxxxxxxxxxxxxxxx")
+    fetch("https://apitransporte.buenosaires.gob.ar/subtes/forecastGTFS?client_id=79aa2000e2d746289ff16223a380c8c8&client_secret=f846a617aba146f18F664d19c6f877b0")
     .then(res => res.json())
     .then(data => {
         
